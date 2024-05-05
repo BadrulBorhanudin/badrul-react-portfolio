@@ -37,6 +37,36 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.about-me-image {
+  width: 200px; /* Adjust width as needed */
+  border-radius: 50%; /* Optional: Makes the image circular */
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0073b1; /* Change to your desired hover color */
+}
+
 .project-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
