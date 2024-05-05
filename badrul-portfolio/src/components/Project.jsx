@@ -1,4 +1,6 @@
-// src/components/Project.jsx
+// Project.jsx
+import PropTypes from 'prop-types';
+
 function Project({ title, image, deployLink, repoLink }) {
   return (
     <div className='project'>
@@ -6,14 +8,21 @@ function Project({ title, image, deployLink, repoLink }) {
       <img src={image} alt={`${title} screenshot`} />
       <div>
         <a href={deployLink} target='_blank' rel='noopener noreferrer'>
-          View Live
+          <button type='button'>View Live</button>
         </a>
         <a href={repoLink} target='_blank' rel='noopener noreferrer'>
-          View Code
+          <button type='button'>View Code</button>
         </a>
       </div>
     </div>
   );
 }
+
+Project.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  deployLink: PropTypes.string.isRequired,
+  repoLink: PropTypes.string.isRequired,
+};
 
 export default Project;
