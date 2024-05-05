@@ -1,5 +1,5 @@
 // src/pages/AboutMe.jsx
-import '../index.css';
+import '../styles/AboutMe.css';
 
 function AboutMe() {
   return (

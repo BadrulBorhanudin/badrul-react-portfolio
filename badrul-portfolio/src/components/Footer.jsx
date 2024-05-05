@@ -1,7 +1,8 @@
 // src/components/Footer.jsx
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import '../index.css';
+// import '../index.css';
+import '../styles/Footer.css';
 
 function Footer() {
   return (
@@ -18,7 +19,7 @@ function Footer() {
         </li>
         <li>
           <a
-            href='https://linkedin.com/in/your-profile'
+            href='https://www.linkedin.com/in/badrul-b-2968402b2'
             target='_blank'
             rel='noopener noreferrer'
           >

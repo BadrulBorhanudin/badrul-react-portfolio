@@ -6,20 +6,23 @@ import AboutMe from './pages/AboutMe';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import './index.css';
 
 function App() {
   return (
     <Router>
-      <Header />
-      <main>
-        <Routes>
-          <Route path='/' element={<AboutMe />} />
-          <Route path='/portfolio' element={<Portfolio />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/resume' element={<Resume />} />
-        </Routes>
-      </main>
-      <Footer />
+      <div className='app'>
+        <Header />
+        <main>
+          <Routes>
+            <Route path='/' element={<AboutMe />} />
+            <Route path='/portfolio' element={<Portfolio />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/resume' element={<Resume />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
