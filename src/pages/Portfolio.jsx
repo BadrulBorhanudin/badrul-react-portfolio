@@ -1,39 +1,39 @@
-// src/pages/Portfolio.jsx
+import { Box, Heading, SimpleGrid, VStack } from '@chakra-ui/react';
 import Project from '../components/Project';
-import passwordGeneratorImg from '../assets/images/weekly-challenges-1.png';
-import codingQuizImg from '../assets/images/weekly-challenges-2.png';
-import workDaySchedulerImg from '../assets/images/weekly-challenges-3.png';
-import weatherDashboardImg from '../assets/images/weekly-challenges-4.png';
-import routeOptimisationToolImg from '../assets/images/group-project-1.png';
+import passwordGenerator from '../assets/images/weekly-challenges-1.png';
+import codingQuizApp from '../assets/images/weekly-challenges-2.png';
+import workDayScheduler from '../assets/images/weekly-challenges-3.png';
+import weatherDashboard from '../assets/images/weekly-challenges-4.png';
+import routeOptimisationTool from '../assets/images/group-project-1.png';
 
 const projects = [
   {
     title: 'Password Generator',
-    image: passwordGeneratorImg,
+    image: passwordGenerator,
     deployLink: 'https://badrulborhanudin.github.io/password-generator/',
     repoLink: 'https://github.com/badrulborhanudin/password-generator',
   },
   {
     title: 'Coding Quiz App',
-    image: codingQuizImg,
+    image: codingQuizApp,
     deployLink: 'https://badrulborhanudin.github.io/coding-quiz-app/',
     repoLink: 'https://github.com/BadrulBorhanudin/coding-quiz-app',
   },
   {
     title: 'Work Day Scheduler',
-    image: workDaySchedulerImg,
+    image: workDayScheduler,
     deployLink: 'https://badrulborhanudin.github.io/weather-dashboard/',
     repoLink: 'https://github.com/BadrulBorhanudin/weather-dashboard',
   },
   {
     title: 'Weather Dashboard',
-    image: weatherDashboardImg,
+    image: weatherDashboard,
     deployLink: 'https://badrulborhanudin.github.io/work-day-scheduler/',
-    repoLink: 'https://github.com/badrulborhanudin/work-day-scheduler',
+    repoLink: 'https://github.com/BadrulBorhanudin/work-day-scheduler',
   },
   {
     title: 'Route Optimisation Tool',
-    image: routeOptimisationToolImg,
+    image: routeOptimisationTool,
     deployLink: 'https://BadrulBorhanudin.github.io/AsTheCrowDrives',
     repoLink: 'https://github.com/BadrulBorhanudin/AsTheCrowDrives',
   },
@@ -41,9 +41,11 @@ const projects = [
 
 function Portfolio() {
   return (
-    <section>
-      <h2>Projects</h2>
-      <div className='project-list'>
+    <VStack spacing={8} mt={8} mb={16}>
+      <Heading as='h2' size='lg' color='#e6e9f0'>
+        Projects
+      </Heading>
+      <SimpleGrid columns={[1, 2, 3]} spacing={8}>
         {projects.map((project, index) => (
           <Project
             key={index}
@@ -53,8 +55,8 @@ function Portfolio() {
             repoLink={project.repoLink}
           />
         ))}
-      </div>
-    </section>
+      </SimpleGrid>
+    </VStack>
   );
 }
 

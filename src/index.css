@@ -1,31 +1,23 @@
-/* src/index.css */
-body {
-  font-family: Arial, sans-serif;
+html,
+body,
+#root {
+  height: 100%;
   margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #f4f4f4;
 }
 
-.app {
+body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-header,
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1em;
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 main {
   flex: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1em;
 }
 
 nav ul {
@@ -36,36 +28,6 @@ nav ul {
 nav ul li {
   display: inline;
   margin-right: 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.project-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.project {
-  border: 1px solid #ccc;
-  padding: 1.5em;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.project img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Form Styles */
-form {
-  padding: 1.5em;
-  border-radius: 6px;
 }
 
 form div {

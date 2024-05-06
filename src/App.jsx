@@ -1,28 +1,32 @@
-// src/App.jsx
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Box } from '@chakra-ui/react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AboutMe from './pages/AboutMe';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
-import './index.css';
 
 function App() {
   return (
     <Router>
-      <div className='app'>
+      <Box
+        minH='100vh'
+        display='flex'
+        flexDirection='column'
+        justifyContent='space-between'
+      >
         <Header />
-        <main>
+        <Box as='main' flex='1'>
           <Routes>
             <Route path='/' element={<AboutMe />} />
             <Route path='/portfolio' element={<Portfolio />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/resume' element={<Resume />} />
           </Routes>
-        </main>
+        </Box>
         <Footer />
-      </div>
+      </Box>
     </Router>
   );
 }
