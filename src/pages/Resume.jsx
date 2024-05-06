@@ -25,7 +25,7 @@ function Resume() {
         <Text mb={4} color='#e6e9f0'>
           Click the button below to download my resume.
         </Text>
-        <Link href='./src/assets/resume.pdf' download>
+        <Link href='/resume.pdf' download>
           <Button colorScheme='teal' _hover={{ bg: 'teal.400' }} mb={8}>
             Download Resume
           </Button>
