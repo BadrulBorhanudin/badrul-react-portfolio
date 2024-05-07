@@ -9,7 +9,9 @@ import {
   VStack,
   Heading,
   Text,
+  Icon,
 } from '@chakra-ui/react';
+import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
 
 function Contact() {
   const [name, setName] = useState('');
@@ -31,7 +33,9 @@ function Contact() {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
-      alert('Form submitted successfully!');
+      alert(
+        'Sorry, this contact form is under construction. Use the contact details below to reach me instead. Thank you.'
+      );
       setName('');
       setEmail('');
       setMessage('');
@@ -42,7 +46,7 @@ function Contact() {
   };
 
   return (
-    <VStack spacing={8} mt={8} mb={16} align='center'>
+    <VStack spacing={8} mt={8} mb={0} align='center'>
       <Heading as='h2' size='lg' color='#e6e9f0'>
         Contact Me
       </Heading>
@@ -146,6 +150,21 @@ function Contact() {
           <Button type='submit' colorScheme='teal' _hover={{ bg: 'teal.400' }}>
             Submit
           </Button>
+
+          <VStack spacing={4} mt={8} align='center'>
+            <Box display='flex' alignItems='center'>
+              <Icon as={PhoneIcon} color='teal.300' boxSize={7} />
+              <Text ml={2} fontSize={['xl', '2xl']} color='#e6e9f0'>
+                +61 401 966 959
+              </Text>
+            </Box>
+            <Box display='flex' alignItems='center'>
+              <Icon as={EmailIcon} color='teal.300' boxSize={7} />
+              <Text ml={2} fontSize={['xl', '2xl']} color='#e6e9f0'>
+                badrulborhanudin@gmail.com
+              </Text>
+            </Box>
+          </VStack>
         </VStack>
       </Box>
     </VStack>
