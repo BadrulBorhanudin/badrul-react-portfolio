@@ -22,14 +22,14 @@ const projects = [
   {
     title: 'Work Day Scheduler',
     image: workDayScheduler,
-    deployLink: 'https://badrulborhanudin.github.io/weather-dashboard/',
-    repoLink: 'https://github.com/BadrulBorhanudin/weather-dashboard',
+    deployLink: 'https://badrulborhanudin.github.io/work-day-scheduler/',
+    repoLink: 'https://github.com/BadrulBorhanudin/work-day-scheduler',
   },
   {
     title: 'Weather Dashboard',
     image: weatherDashboard,
-    deployLink: 'https://badrulborhanudin.github.io/work-day-scheduler/',
-    repoLink: 'https://github.com/BadrulBorhanudin/work-day-scheduler',
+    deployLink: 'https://badrulborhanudin.github.io/weather-dashboard/',
+    repoLink: 'https://github.com/BadrulBorhanudin/weather-dashboard',
   },
   {
     title: 'Route Optimisation Tool',
