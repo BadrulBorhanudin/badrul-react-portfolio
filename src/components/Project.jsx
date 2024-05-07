@@ -1,4 +1,12 @@
-import { Box, Image, Link, Text, Heading, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Image,
+  Link,
+  Text,
+  Heading,
+  VStack,
+  HStack,
+} from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
 function Project({ title, image, deployLink, repoLink }) {
@@ -20,20 +28,22 @@ function Project({ title, image, deployLink, repoLink }) {
         width='100%'
       />
 
-      <VStack p={4} align='start'>
-        <Heading as='h3' size='md' color='#e6e9f0'>
+      <VStack p={4} align='center'>
+        <Heading as='h3' size='md' color='#e6e9f0' textAlign='center'>
           {title}
         </Heading>
-        <Text>
-          <Link href={deployLink} isExternal color='teal.300'>
-            Live Demo
-          </Link>
-        </Text>
-        <Text>
-          <Link href={repoLink} isExternal color='teal.300'>
-            Source Code
-          </Link>
-        </Text>
+        <HStack spacing={4}>
+          <Text>
+            <Link href={deployLink} isExternal color='teal.300'>
+              Live Demo
+            </Link>
+          </Text>
+          <Text>
+            <Link href={repoLink} isExternal color='teal.300'>
+              Source Code
+            </Link>
+          </Text>
+        </HStack>
       </VStack>
     </Box>
   );

@@ -2,16 +2,39 @@ import {
   Box,
   Heading,
   Link,
-  List,
-  ListItem,
   VStack,
   Text,
   Button,
+  SimpleGrid,
 } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faHtml5,
+  faCss3Alt,
+  faJsSquare,
+  faReact,
+  faNodeJs,
+  faGitAlt,
+  faGithub,
+} from '@fortawesome/free-brands-svg-icons';
+import { SiExpress, SiMongodb, SiMysql } from 'react-icons/si';
 
 function Resume() {
+  const icons = [
+    { icon: faHtml5, label: 'HTML' },
+    { icon: faCss3Alt, label: 'CSS' },
+    { icon: faJsSquare, label: 'JavaScript' },
+    { icon: faReact, label: 'React' },
+    { icon: faNodeJs, label: 'Node.js' },
+    { icon: SiExpress, label: 'Express' },
+    { icon: SiMongodb, label: 'MongoDB' },
+    { icon: SiMysql, label: 'MySQL' },
+    { icon: faGitAlt, label: 'Git' },
+    { icon: faGithub, label: 'GitHub' },
+  ];
+
   return (
-    <VStack spacing={8} mt={8} mb={16} align='center'>
+    <VStack spacing={2} mt={8} mb={16} align='center'>
       <Heading as='h2' size='lg' color='#e6e9f0'>
         Resume
       </Heading>
@@ -30,21 +53,21 @@ function Resume() {
             Download Resume
           </Button>
         </Link>
-        <Heading as='h3' size='md' color='#e6e9f0' mb={4}>
+        <Heading as='h3' size='md' color='#e6e9f0' mb={6}>
           Proficiencies
         </Heading>
-        <List spacing={3} textAlign='center'>
-          <ListItem color='#e6e9f0'>HTML</ListItem>
-          <ListItem color='#e6e9f0'>CSS</ListItem>
-          <ListItem color='#e6e9f0'>JavaScript</ListItem>
-          <ListItem color='#e6e9f0'>React</ListItem>
-          <ListItem color='#e6e9f0'>Node.js</ListItem>
-          <ListItem color='#e6e9f0'>Express</ListItem>
-          <ListItem color='#e6e9f0'>MongoDB</ListItem>
-          <ListItem color='#e6e9f0'>SQL</ListItem>
-          <ListItem color='#e6e9f0'>Git</ListItem>
-          <ListItem color='#e6e9f0'>GitHub</ListItem>
-        </List>
+        <SimpleGrid columns={{ base: 2, md: 5 }} spacing={6} textAlign='center'>
+          {icons.map(({ icon: Icon, label }) => (
+            <VStack key={label}>
+              {typeof Icon === 'function' ? (
+                <Icon size='3em' />
+              ) : (
+                <FontAwesomeIcon icon={Icon} size='3x' />
+              )}
+              <Text color='#e6e9f0'>{label}</Text>
+            </VStack>
+          ))}
+        </SimpleGrid>
       </Box>
     </VStack>
   );
