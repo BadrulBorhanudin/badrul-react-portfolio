@@ -5,6 +5,8 @@ import codingQuizApp from '../assets/images/weekly-challenges-2.png';
 import workDayScheduler from '../assets/images/weekly-challenges-3.png';
 import weatherDashboard from '../assets/images/weekly-challenges-4.png';
 import routeOptimisationTool from '../assets/images/group-project-1.png';
+import goalGetter from '../assets/images/group-project-2.png';
+
 
 const projects = [
   {
@@ -36,6 +38,12 @@ const projects = [
     image: routeOptimisationTool,
     deployLink: 'https://BadrulBorhanudin.github.io/AsTheCrowDrives',
     repoLink: 'https://github.com/BadrulBorhanudin/AsTheCrowDrives',
+  },
+  {
+    title: 'Goal Getter',
+    image: goalGetter,
+    deployLink: 'https://project2-goalgetter-31273201db63.herokuapp.com/',
+    repoLink: 'https://github.com/BadrulBorhanudin/GoalGetter',
   },
 ];
 
