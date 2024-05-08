@@ -36,7 +36,7 @@ function Header() {
           to='/'
           end
           _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'teal.300' }}
+          _activeLink={{ color: 'white' }}
           fontWeight='bold'
           fontSize='lg'
         >
@@ -48,7 +48,7 @@ function Header() {
           as={NavLink}
           to='/portfolio'
           _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'teal.300' }}
+          _activeLink={{ color: 'white' }}
           fontWeight='bold'
           fontSize='lg'
         >
@@ -60,7 +60,7 @@ function Header() {
           as={NavLink}
           to='/contact'
           _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'teal.300' }}
+          _activeLink={{ color: 'white' }}
           fontWeight='bold'
           fontSize='lg'
         >
@@ -72,7 +72,7 @@ function Header() {
           as={NavLink}
           to='/resume'
           _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'teal.300' }}
+          _activeLink={{ color: 'white' }}
           fontWeight='bold'
           fontSize='lg'
         >
