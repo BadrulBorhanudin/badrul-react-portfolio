@@ -1,10 +1,14 @@
-import { Box, HStack, Link, Text } from '@chakra-ui/react';
+import { Box, HStack, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
+  const bgColor = useColorModeValue('brand.50', 'brand.900');
+  const textColor = useColorModeValue('brand.900', 'brand.50');
+  const hoverColor = useColorModeValue('limeGreen.500', 'limeGreen.500');
+
   return (
-    <Box as='footer' py={4} textAlign='center' bg='#191a24' color='#e6e9f0'>
+    <Box as='footer' py={4} textAlign='center' bg={bgColor} color={textColor}>
       <HStack
         as='ul'
         justifyContent='center'
@@ -18,7 +22,7 @@ function Footer() {
             href='https://github.com/badrulborhanudin'
             target='_blank'
             rel='noopener noreferrer'
-            _hover={{ color: 'teal.300' }}
+            _hover={{ color: hoverColor }}
           >
             <FontAwesomeIcon icon={faGithub} size='2x' />
           </Link>
@@ -28,7 +32,7 @@ function Footer() {
             href='https://www.linkedin.com/in/badrul-b-2968402b2'
             target='_blank'
             rel='noopener noreferrer'
-            _hover={{ color: 'teal.300' }}
+            _hover={{ color: hoverColor }}
           >
             <FontAwesomeIcon icon={faLinkedin} size='2x' />
           </Link>

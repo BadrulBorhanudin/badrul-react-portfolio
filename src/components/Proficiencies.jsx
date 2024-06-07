@@ -1,11 +1,10 @@
 import {
   Box,
   Heading,
-  Link,
   VStack,
   Text,
-  Button,
   SimpleGrid,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -19,7 +18,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { SiExpress, SiMongodb, SiMysql } from 'react-icons/si';
 
-function Resume() {
+function Proficiencies() {
   const icons = [
     { icon: faHtml5, label: 'HTML' },
     { icon: faCss3Alt, label: 'CSS' },
@@ -33,38 +32,31 @@ function Resume() {
     { icon: faGithub, label: 'GitHub' },
   ];
 
+  const headingColor = useColorModeValue('brand.700', 'brand.50');
+  const boxBg = useColorModeValue('brand.50', 'brand.900');
+  const textColor = useColorModeValue('brand.900', 'brand.50');
+
   return (
-    <VStack spacing={2} mt={8} mb={16} align='center'>
-      <Heading as='h2' size='lg' color='#e6e9f0'>
-        Resume
-      </Heading>
+    <VStack spacing={4} mt={8} mb={0} align='center' w='full'>
       <Box
-        w={['90%', '70%', '50%']}
-        bg='#262736'
-        p={8}
+        w={['90%', '70%', '80%']}
+        bg={boxBg}
+        p={0}
         borderRadius='md'
         textAlign='center'
       >
-        <Text mb={4} color='#e6e9f0'>
-          Click the button below to download my resume.
-        </Text>
-        <Link href='/resume.pdf' download>
-          <Button colorScheme='teal' _hover={{ bg: 'teal.400' }} mb={8}>
-            Download Resume
-          </Button>
-        </Link>
-        <Heading as='h3' size='md' color='#e6e9f0' mb={6}>
+        <Heading as='h3' size='md' color={textColor} mb={6}>
           Proficiencies
         </Heading>
-        <SimpleGrid columns={{ base: 2, md: 5 }} spacing={6} textAlign='center'>
+        <SimpleGrid columns={{ base: 5, md: 10 }} spacing={14} textAlign='center'>
           {icons.map(({ icon: Icon, label }) => (
             <VStack key={label}>
               {typeof Icon === 'function' ? (
-                <Icon size='3em' />
+                <Icon size='2em' />
               ) : (
-                <FontAwesomeIcon icon={Icon} size='3x' />
+                <FontAwesomeIcon icon={Icon} size='2x' />
               )}
-              <Text color='#e6e9f0'>{label}</Text>
+              <Text color={textColor}>{label}</Text>
             </VStack>
           ))}
         </SimpleGrid>
@@ -73,4 +65,4 @@ function Resume() {
   );
 }
 
-export default Resume;
+export default Proficiencies;

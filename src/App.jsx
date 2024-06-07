@@ -1,33 +1,30 @@
 import { Box } from '@chakra-ui/react';
 import Header from './components/Header';
+import Home from './pages/Home';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AboutMe from './pages/AboutMe';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
-import Resume from './pages/Resume';
+import Layout from './components/Layout';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// import Portfolio from './components/Portfolio';
+// import Contact from './components/Contact';
+// import Resume from './components/Resume';
 
 function App() {
   return (
-    <Router>
-      <Box
-        minH='100vh'
-        display='flex'
-        flexDirection='column'
-        justifyContent='space-between'
-      >
-        <Header />
-        <Box as='main' flex='1'>
-          <Routes>
-            <Route path='/' element={<AboutMe />} />
-            <Route path='/portfolio' element={<Portfolio />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/resume' element={<Resume />} />
-          </Routes>
-        </Box>
-        <Footer />
+    // <Box
+    //   minH='100vh'
+    //   display='flex'
+    //   flexDirection='column'
+    //   justifyContent='space-between'
+    // >
+    <Layout>
+      <Header />
+      <Box as='main' flex='1'>
+        <Home />
       </Box>
-    </Router>
+      <Footer />
+    </Layout>
+    // </Box>
   );
 }
 
