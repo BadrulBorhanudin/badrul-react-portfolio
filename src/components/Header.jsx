@@ -2,9 +2,6 @@ import {
   Box,
   Heading,
   HStack,
-  Link,
-  ListItem,
-  UnorderedList,
   IconButton,
   Modal,
   ModalOverlay,
@@ -13,128 +10,78 @@ import {
   ModalBody,
   useDisclosure,
   Flex,
-  Spacer,
+  useColorMode,
+  useColorModeValue,
+  Button,
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { NavLink } from 'react-router-dom';
+import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import Navigation from './Navigation';
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const MenuLinks = () => (
-    <UnorderedList
-      listStyleType='none'
-      display='flex'
-      flexDirection={{ base: 'column', md: 'row' }}
-      gap={{ base: 4, md: 8 }}
-      m={3}
-      p={0}
-    >
-      <ListItem>
-        <Link
-          as={NavLink}
-          to='/'
-          end
-          _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'white' }}
-          fontWeight='bold'
-          fontSize='lg'
-        >
-          About Me
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link
-          as={NavLink}
-          to='/portfolio'
-          _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'white' }}
-          fontWeight='bold'
-          fontSize='lg'
-        >
-          Projects
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link
-          as={NavLink}
-          to='/contact'
-          _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'white' }}
-          fontWeight='bold'
-          fontSize='lg'
-        >
-          Contact
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link
-          as={NavLink}
-          to='/resume'
-          _hover={{ color: 'teal.300' }}
-          _activeLink={{ color: 'white' }}
-          fontWeight='bold'
-          fontSize='lg'
-        >
-          Resume
-        </Link>
-      </ListItem>
-    </UnorderedList>
-  );
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bg = useColorModeValue('brand.50', 'brand.900');
+  const color = useColorModeValue('brand.700', 'brand.50');
+  const buttonColor = useColorModeValue('brand.700', 'brand.50');
+  const buttonHoverBg = useColorModeValue('gray.100', 'brand.800');
 
   return (
-    <Box as='header' py={4} bg='#191a24' color='#e6e9f0'>
-      <Flex align='center' mx={{ base: 4, md: 8 }} mb={1} position='relative'>
-        <Heading
-          as='h1'
-          size='lg'
-          flexShrink={0}
-          display={{ base: 'block', md: 'none' }}
-        >
+    <Box as='header' py={4} bg={bg} color={color}>
+      <Flex
+        align='center'
+        mx={{ base: 4, md: 8 }}
+        justifyContent='space-between'
+      >
+        <a href='/'>
+        <Heading as='h1' size={{ base: 'md', md: 'lg' }} flexShrink={0}>
           Badrul Borhanudin
         </Heading>
-        <Spacer display={{ base: 'block', md: 'none' }} />
-        <Heading
-          as='h1'
-          size='xl'
-          textAlign='center'
-          flex='1'
-          display={{ base: 'none', md: 'block' }}
+        </a>
+        <HStack
+          as='nav'
+          display={{ base: 'none', md: 'flex' }}
+          alignItems='center'
         >
-          Badrul Borhanudin
-        </Heading>
-        <Box
-          position='absolute'
-          right={{ base: 0, md: 0 }}
-          display={{ base: 'block', md: 'none' }}
-        >
-          <IconButton
-            aria-label='Open Menu'
-            icon={<HamburgerIcon />}
-            onClick={onOpen}
+          <Navigation onClose={onClose} />
+          <Button
+            onClick={toggleColorMode}
             variant='outline'
-            color='#e6e9f0'
+            color={buttonColor}
             border='1px'
-            _hover={{ bg: '#282a36' }}
-          />
-        </Box>
+            ml={4}
+          >
+            {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </Button>
+        </HStack>
+        <IconButton
+          aria-label='Open Menu'
+          icon={<HamburgerIcon />}
+          onClick={onOpen}
+          variant='outline'
+          color={buttonColor}
+          border='1px'
+          _hover={{ bg: buttonHoverBg }}
+          display={{ base: 'flex', md: 'none' }}
+        />
       </Flex>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg='#191a24' color='#e6e9f0' maxW='400px'>
+        <ModalContent bg={bg} color={color} maxW='400px'>
           <ModalCloseButton />
           <ModalBody py={8}>
-            <MenuLinks />
+            <Navigation onClose={onClose} />
+            <Button
+              onClick={toggleColorMode}
+              variant='outline'
+              color={buttonColor}
+              border='1px'
+              mt={4}
+            >
+              {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </Button>
           </ModalBody>
         </ModalContent>
       </Modal>
-      <HStack
-        as='nav'
-        justifyContent='center'
-        display={{ base: 'none', md: 'flex' }}
-      >
-        <MenuLinks />
-      </HStack>
     </Box>
   );
 }
