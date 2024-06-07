@@ -18,10 +18,11 @@ import { motion } from 'framer-motion';
 import Proficiencies from './Proficiencies';
 
 function AboutMe() {
-  const iconColor = useColorModeValue('gray.700', 'gray.200');
+  // const iconColor = useColorModeValue('gray.700', 'gray.200');
   const buttonBg = useColorModeValue('limeGreen.500', 'limeGreen.500');
   const buttonHoverBg = useColorModeValue('limeGreen.500', 'limeGreen.500');
   const buttonTextColor = useColorModeValue('gray.800', 'gray.800');
+  const hoverColor = useColorModeValue('limeGreen.500', 'limeGreen.500');
 
   const text = "Hello, I'm Badrul.";
   const letters = Array.from(text);
@@ -96,18 +97,19 @@ function AboutMe() {
               Coding Bootcamp Graduate from University of Adelaide
             </Text>
             <HStack spacing={4} mt={2}>
-              <Link href='https://github.com/badrulborhanudin' isExternal>
-                <FontAwesomeIcon icon={faGithub} size='2x' color={iconColor} />
+              <Link
+                href='https://github.com/badrulborhanudin'
+                isExternal
+                _hover={{ color: hoverColor }}
+              >
+                <FontAwesomeIcon icon={faGithub} size='2x' />
               </Link>
               <Link
                 href='https://www.linkedin.com/in/badrul-b-2968402b2'
                 isExternal
+                _hover={{ color: hoverColor }}
               >
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  size='2x'
-                  color={iconColor}
-                />
+                <FontAwesomeIcon icon={faLinkedin} size='2x' />
               </Link>
               <Button
                 leftIcon={<DownloadIcon />}

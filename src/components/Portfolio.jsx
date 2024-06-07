@@ -31,7 +31,7 @@ const projects = [
     title: 'Coding Quiz App',
     image: codingQuizApp,
     deployLink: 'https://badrulborhanudin.github.io/coding-quiz-app/',
-    repoLink: 'https://github.com/BadrulBorhanudin/coding-quiz-app',
+    repoLink: 'https://github.com/badrulborhanudin/coding-quiz-app',
   },
   {
     title: 'Work Day Scheduler',
@@ -67,7 +67,6 @@ const projects = [
 
 function Portfolio() {
   const headingColor = useColorModeValue('brand.700', 'brand.50');
-  const cardBg = useColorModeValue('brand.50', 'brand.900');
   const dotColor = useColorModeValue('gray.900', 'white');
   const dotActiveColor = useColorModeValue('gray.900', 'white');
 
@@ -110,7 +109,6 @@ function Portfolio() {
               borderWidth='1px'
               borderRadius='lg'
               overflow='hidden'
-              bg={cardBg}
               p={4}
               mx={2}
               mt={3}

@@ -20,22 +20,21 @@ import Navigation from './Navigation';
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
-  const bg = useColorModeValue('brand.50', 'brand.900');
   const color = useColorModeValue('brand.700', 'brand.50');
   const buttonColor = useColorModeValue('brand.700', 'brand.50');
   const buttonHoverBg = useColorModeValue('gray.100', 'brand.800');
 
   return (
-    <Box as='header' py={4} bg={bg} color={color}>
+    <Box as='header' py={4} bg='transparent' color={color}>
       <Flex
         align='center'
         mx={{ base: 4, md: 8 }}
         justifyContent='space-between'
       >
         <a href='/'>
-        <Heading as='h1' size={{ base: 'md', md: 'lg' }} flexShrink={0}>
-          Badrul Borhanudin
-        </Heading>
+          <Heading as='h1' size={{ base: 'md', md: 'lg' }} flexShrink={0}>
+            Badrul Borhanudin
+          </Heading>
         </a>
         <HStack
           as='nav'
@@ -66,7 +65,7 @@ function Header() {
       </Flex>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg={bg} color={color} maxW='400px'>
+        <ModalContent bg='transparent' color={color} maxW='400px'>
           <ModalCloseButton />
           <ModalBody py={8}>
             <Navigation onClose={onClose} />
