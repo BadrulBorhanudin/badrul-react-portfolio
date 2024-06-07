@@ -37,13 +37,13 @@ function Proficiencies() {
 
   return (
     <VStack spacing={4} mt={8} mb={0} align='center' w='full'>
-      <Box w={['90%', '70%', '80%']} p={4} textAlign='center'>
+      <Box w={['90%', '70%', '80%']} p={0} textAlign='center'>
         <Heading as='h3' size='md' color={headingColor} mb={6}>
           Proficiencies
         </Heading>
         <SimpleGrid
-          columns={{ base: 2, sm: 3, md: 5 }}
-          spacing={10}
+          columns={{ base: 5, md: 10 }}
+          spacing={14}
           textAlign='center'
         >
           {icons.map(({ icon: Icon, label }) => (
