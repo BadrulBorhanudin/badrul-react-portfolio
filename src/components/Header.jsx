@@ -23,6 +23,10 @@ function Header() {
   const color = useColorModeValue('brand.700', 'brand.50');
   const buttonColor = useColorModeValue('brand.700', 'brand.50');
   const buttonHoverBg = useColorModeValue('gray.100', 'brand.800');
+  const modalBg = useColorModeValue(
+    'linear-gradient(to right, #f7f7f7, #e1e1e1)',
+    'linear-gradient(to right, #0e0e0e, #2e2e2e)'
+  );
 
   return (
     <Box as='header' py={4} bg='transparent' color={color}>
@@ -65,7 +69,8 @@ function Header() {
       </Flex>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent bg='transparent' color={color} maxW='400px'>
+        tent{' '}
+        <ModalContent bg={modalBg} color={color} maxW='400px'>
           <ModalCloseButton />
           <ModalBody py={8}>
             <Navigation onClose={onClose} />
