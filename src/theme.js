@@ -27,6 +27,7 @@ const customTheme = extendTheme({
           'linear-gradient(to right, #0e0e0e, #2e2e2e)'
         )(props),
         color: mode('#0e0e0e', '#f7f7f7')(props),
+        fontFamily: 'Quicksand, sans-serif',
       },
     }),
   },
