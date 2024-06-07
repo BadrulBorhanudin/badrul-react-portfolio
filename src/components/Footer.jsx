@@ -3,12 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
-  const bgColor = useColorModeValue('brand.50', 'brand.900');
   const textColor = useColorModeValue('brand.900', 'brand.50');
   const hoverColor = useColorModeValue('limeGreen.500', 'limeGreen.500');
 
   return (
-    <Box as='footer' py={4} textAlign='center' bg={bgColor} color={textColor}>
+    <Box as='footer' py={4} textAlign='center' color={textColor}>
       <HStack
         as='ul'
         justifyContent='center'
