@@ -23,6 +23,14 @@ function AboutMe() {
   const buttonHoverBg = useColorModeValue('limeGreen.500', 'limeGreen.700');
   const buttonTextColor = useColorModeValue('gray.800', 'gray.800');
   const hoverColor = useColorModeValue('limeGreen.600', 'limeGreen.500');
+  const borderColor = useColorModeValue(
+    'rgba(255, 255, 255, 0.5)',
+    'rgba(0, 0, 0, 0.5)'
+  );
+  const boxShadow = useColorModeValue(
+    '0 0 20px rgba(0, 0, 0, 0.1)',
+    '0 0 20px rgba(255, 255, 255, 0.1)'
+  );
 
   const text = "Hello, I'm Badrul.";
   const letters = Array.from(text);
@@ -66,7 +74,9 @@ function AboutMe() {
             boxSize={{ base: '150px', sm: '200px', md: '300px' }}
             src={profilePic}
             alt='Badrul Borhanudin'
-            boxShadow='lg'
+            border='5px solid'
+            borderColor={borderColor}
+            boxShadow={boxShadow}
             justifySelf='center'
           />
           <VStack spacing={2} alignItems={{ base: 'center', md: 'flex-start' }}>
@@ -85,7 +95,7 @@ function AboutMe() {
                   <Text
                     fontSize='2xl'
                     fontWeight='bold'
-                    color={ nameColor }
+                    color={nameColor}
                     display='inline-block'
                   >
                     {letter === ' ' ? '\u00A0' : letter}

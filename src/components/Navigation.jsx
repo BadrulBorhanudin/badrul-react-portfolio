@@ -22,7 +22,7 @@ const Navigation = ({ onClose }) => {
     e.preventDefault();
     const targetId = e.currentTarget.getAttribute('href').substring(1);
     const targetElement = document.getElementById(targetId);
-    window.location.hash = `#${targetId}`; // Update the URL hash
+    window.location.hash = `#${targetId}`;
     onClose();
 
     setTimeout(() => {

@@ -7,6 +7,8 @@ import {
   Link,
   Button,
   useColorModeValue,
+  HStack,
+  Tooltip,
 } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 import 'slick-carousel/slick/slick.css';
@@ -26,42 +28,49 @@ const projects = [
     image: passwordGenerator,
     deployLink: 'https://badrulborhanudin.github.io/password-generator/',
     repoLink: 'https://github.com/badrulborhanudin/password-generator',
+    description: 'A tool to generate secure passwords.',
   },
   {
     title: 'Coding Quiz App',
     image: codingQuizApp,
     deployLink: 'https://badrulborhanudin.github.io/coding-quiz-app/',
     repoLink: 'https://github.com/badrulborhanudin/coding-quiz-app',
+    description: 'A quiz app to test your coding knowledge.',
   },
   {
     title: 'Work Day Scheduler',
     image: workDayScheduler,
     deployLink: 'https://badrulborhanudin.github.io/work-day-scheduler/',
     repoLink: 'https://github.com/badrulborhanudin/work-day-scheduler',
+    description: 'A simple scheduler for your work day.',
   },
   {
     title: 'Weather Dashboard',
     image: weatherDashboard,
     deployLink: 'https://badrulborhanudin.github.io/weather-dashboard/',
     repoLink: 'https://github.com/badrulborhanudin/weather-dashboard',
+    description: 'A dashboard to check the weather forecast.',
   },
   {
     title: 'Route Optimisation Tool',
     image: routeOptimisationTool,
     deployLink: 'https://BadrulBorhanudin.github.io/AsTheCrowDrives',
     repoLink: 'https://github.com/BadrulBorhanudin/AsTheCrowDrives',
+    description: 'A tool to optimize travel routes.',
   },
   {
     title: 'Goal Getter',
     image: goalGetter,
     deployLink: 'https://project2-goalgetter-31273201db63.herokuapp.com/',
     repoLink: 'https://github.com/BadrulBorhanudin/GoalGetter',
+    description: 'An app to help you achieve your goals.',
   },
   {
     title: 'CarPoolHub',
     image: carPoolHub,
     deployLink: 'https://carpoolhub.onrender.com/',
     repoLink: 'https://github.com/BadrulBorhanudin/carpoolhub',
+    description: 'A platform to find carpooling partners.',
   },
 ];
 
@@ -74,7 +83,11 @@ function Portfolio() {
     'limeGreen.600',
     'limeGreen.500'
   );
-  const sourceButtonBorderColor = useColorModeValue('limeGreen.600', 'limeGreen.500');
+  const sourceButtonBorderColor = useColorModeValue(
+    'limeGreen.600',
+    'limeGreen.500'
+  );
+  const projectBorderColor = useColorModeValue('gray.300', 'gray.700');
 
   const settings = {
     dots: true,
@@ -110,62 +123,72 @@ function Portfolio() {
       <Box width='full'>
         <Slider {...settings}>
           {projects.map((project, index) => (
-            <Box
+            <Tooltip
               key={index}
-              borderWidth='1px'
-              borderRadius='lg'
-              overflow='hidden'
-              p={4}
-              mx={2}
-              mt={3}
+              label={project.description}
+              aria-label='Project description'
+              placement='bottom'
+              borderRadius='md'
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                objectFit='cover'
-                height='200px'
-                width='100%'
-              />
-              <VStack p={4} align='center'>
-                <Heading
-                  as='h3'
-                  size='md'
-                  color={useColorModeValue('gray.800', 'brand.50')}
-                  textAlign='center'
-                >
-                  {project.title}
-                </Heading>
-                <Button
-                  as={Link}
-                  href={project.deployLink}
-                  isExternal
-                  bg={useColorModeValue('limeGreen.600', 'limeGreen.500')}
-                  color={liveButtonTextColor}
-                  _hover={{ bg: useColorModeValue('limeGreen.500', 'limeGreen.700')}}
-                  variant='solid'
-                  size='sm'
-                  mt={2}
-                >
-                  Live Demo
-                </Button>
-                <Button
-                  as={Link}
-                  href={project.repoLink}
-                  isExternal
-                  borderColor={sourceButtonBorderColor}
-                  color={sourceButtonTextColor}
-                  _hover={{
-                    bg: 'limeGreen.600',
-                    color: 'brand.800',
-                  }}
-                  variant='outline'
-                  size='sm'
-                  mt={2}
-                >
-                  Source Code
-                </Button>
-              </VStack>
-            </Box>
+              <Box
+                borderWidth='1px'
+                borderRadius='lg'
+                borderColor={projectBorderColor}
+                overflow='hidden'
+                p={4}
+                mx={2}
+                mt={3}
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  objectFit='cover'
+                  height='200px'
+                  width='100%'
+                />
+                <VStack p={4} align='center'>
+                  <Heading
+                    as='h3'
+                    size='md'
+                    color={useColorModeValue('gray.800', 'brand.50')}
+                    textAlign='center'
+                  >
+                    {project.title}
+                  </Heading>
+                  <HStack spacing={4} mt={2}>
+                    <Button
+                      as={Link}
+                      href={project.deployLink}
+                      isExternal
+                      bg={useColorModeValue('limeGreen.600', 'limeGreen.500')}
+                      color={liveButtonTextColor}
+                      _hover={{
+                        bg: useColorModeValue('limeGreen.500', 'limeGreen.700'),
+                      }}
+                      variant='solid'
+                      size='sm'
+                    >
+                      Live Demo
+                    </Button>
+                    <Button
+                      as={Link}
+                      href={project.repoLink}
+                      isExternal
+                      borderColor={sourceButtonBorderColor}
+                      color={sourceButtonTextColor}
+                      _hover={{
+                        bg: 'limeGreen.600',
+                        color: 'brand.800',
+                      }}
+                      variant='outline'
+                      size='sm'
+                    >
+                      Source Code
+                    </Button>
+                  </HStack>
+                </VStack>
+              </Box>
+            </Tooltip>
           ))}
         </Slider>
       </Box>
