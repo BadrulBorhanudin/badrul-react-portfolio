@@ -17,6 +17,8 @@ const customTheme = extendTheme({
     },
     limeGreen: {
       500: '#32CD32',
+      600: '#2EB82E',
+      700: '#279927',
     },
   },
   styles: {

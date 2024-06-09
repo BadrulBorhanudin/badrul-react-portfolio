@@ -2,7 +2,7 @@ import { IconButton, useColorModeValue } from '@chakra-ui/react';
 
 const CustomPrevArrow = (props) => {
   const { className, style, onClick } = props;
-  const bg = useColorModeValue('limeGreen.500', 'limeGreen.500');
+  const bg = useColorModeValue('limeGreen.600', 'limeGreen.500');
   const color = useColorModeValue('brand.900', 'brand.900');
 
   return (
@@ -21,8 +21,8 @@ const CustomPrevArrow = (props) => {
       }}
       bg={bg}
       color={color}
-      _hover={{ bg: 'limeGreen.500' }}
-      _active={{ bg: 'limeGreen.500' }}
+      _hover={{ bg: useColorModeValue('limeGreen.500', 'limeGreen.700') }}
+      _active={{ bg: useColorModeValue('limeGreen.600', 'limeGreen.500') }}
       size='md'
       borderRadius='lg'
     />
@@ -31,7 +31,7 @@ const CustomPrevArrow = (props) => {
 
 const CustomNextArrow = (props) => {
   const { className, style, onClick } = props;
-  const bg = useColorModeValue('limeGreen.500', 'limeGreen.500');
+  const bg = useColorModeValue('limeGreen.600', 'limeGreen.500');
   const color = useColorModeValue('brand.50', 'brand.50');
 
   return (
@@ -50,8 +50,8 @@ const CustomNextArrow = (props) => {
       }}
       bg={bg}
       color={color}
-      _hover={{ bg: 'limeGreen.500' }}
-      _active={{ bg: 'limeGreen.500' }}
+      _hover={{ bg: useColorModeValue('limeGreen.500', 'limeGreen.700') }}
+      _active={{ bg: useColorModeValue('limeGreen.600', 'limeGreen.500') }}
       size='md'
       borderRadius='lg'
     />

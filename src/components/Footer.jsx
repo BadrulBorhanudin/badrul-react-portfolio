@@ -4,7 +4,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
   const textColor = useColorModeValue('brand.900', 'brand.50');
-  const hoverColor = useColorModeValue('limeGreen.500', 'limeGreen.500');
+  const hoverColor = useColorModeValue('limeGreen.600', 'limeGreen.500');
 
   return (
     <Box as='footer' py={4} textAlign='center' color={textColor}>
