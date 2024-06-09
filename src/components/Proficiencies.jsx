@@ -32,6 +32,8 @@ function Proficiencies() {
   ];
 
   const headingColor = useColorModeValue('brand.700', 'brand.50');
+  const boxBg = useColorModeValue('transparent', 'transparent');
+  const boxBorderColor = useColorModeValue('brand.200', 'brand.700');
 
   return (
     <VStack spacing={4} mt={8} mb={0} align='center' w='full'>
@@ -45,12 +47,19 @@ function Proficiencies() {
           textAlign='center'
         >
           {icons.map((icon, index) => (
-            <Image
+            <Box
               key={index}
-              src={icon}
               boxSize={{ base: '2.5em', md: '3.5em' }}
-              objectFit='contain'
-            />
+              borderRadius='md'
+              bg={boxBg}
+              borderWidth='2.5px'
+              borderColor={boxBorderColor}
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+            >
+              <Image src={icon} objectFit='contain' />
+            </Box>
           ))}
         </SimpleGrid>
       </Box>
