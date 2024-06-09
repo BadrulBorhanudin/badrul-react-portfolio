@@ -18,11 +18,11 @@ import { motion } from 'framer-motion';
 import Proficiencies from './Proficiencies';
 
 function AboutMe() {
-  // const iconColor = useColorModeValue('gray.700', 'gray.200');
-  const buttonBg = useColorModeValue('limeGreen.500', 'limeGreen.500');
-  const buttonHoverBg = useColorModeValue('limeGreen.500', 'limeGreen.500');
+  const nameColor = useColorModeValue('limeGreen.600', 'limeGreen.500');
+  const buttonBg = useColorModeValue('limeGreen.600', 'limeGreen.500');
+  const buttonHoverBg = useColorModeValue('limeGreen.500', 'limeGreen.700');
   const buttonTextColor = useColorModeValue('gray.800', 'gray.800');
-  const hoverColor = useColorModeValue('limeGreen.500', 'limeGreen.500');
+  const hoverColor = useColorModeValue('limeGreen.600', 'limeGreen.500');
 
   const text = "Hello, I'm Badrul.";
   const letters = Array.from(text);
@@ -85,7 +85,7 @@ function AboutMe() {
                   <Text
                     fontSize='2xl'
                     fontWeight='bold'
-                    color='limeGreen.500'
+                    color={ nameColor }
                     display='inline-block'
                   >
                     {letter === ' ' ? '\u00A0' : letter}

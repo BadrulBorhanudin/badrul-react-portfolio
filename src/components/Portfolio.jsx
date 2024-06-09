@@ -5,7 +5,7 @@ import {
   VStack,
   Image,
   Link,
-  Text,
+  Button,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
@@ -69,6 +69,12 @@ function Portfolio() {
   const headingColor = useColorModeValue('brand.700', 'brand.50');
   const dotColor = useColorModeValue('gray.900', 'white');
   const dotActiveColor = useColorModeValue('gray.900', 'white');
+  const liveButtonTextColor = useColorModeValue('gray.800', 'gray.800');
+  const sourceButtonTextColor = useColorModeValue(
+    'limeGreen.600',
+    'limeGreen.500'
+  );
+  const sourceButtonBorderColor = useColorModeValue('limeGreen.600', 'limeGreen.500');
 
   const settings = {
     dots: true,
@@ -129,24 +135,35 @@ function Portfolio() {
                 >
                   {project.title}
                 </Heading>
-                <Text fontWeight='bold'>
-                  <Link
-                    href={project.deployLink}
-                    isExternal
-                    color='limeGreen.500'
-                  >
-                    Live Demo
-                  </Link>
-                </Text>
-                <Text fontWeight='bold'>
-                  <Link
-                    href={project.repoLink}
-                    isExternal
-                    color='limeGreen.500'
-                  >
-                    Source Code
-                  </Link>
-                </Text>
+                <Button
+                  as={Link}
+                  href={project.deployLink}
+                  isExternal
+                  bg={useColorModeValue('limeGreen.600', 'limeGreen.500')}
+                  color={liveButtonTextColor}
+                  _hover={{ bg: useColorModeValue('limeGreen.500', 'limeGreen.700')}}
+                  variant='solid'
+                  size='sm'
+                  mt={2}
+                >
+                  Live Demo
+                </Button>
+                <Button
+                  as={Link}
+                  href={project.repoLink}
+                  isExternal
+                  borderColor={sourceButtonBorderColor}
+                  color={sourceButtonTextColor}
+                  _hover={{
+                    bg: 'limeGreen.600',
+                    color: 'brand.800',
+                  }}
+                  variant='outline'
+                  size='sm'
+                  mt={2}
+                >
+                  Source Code
+                </Button>
               </VStack>
             </Box>
           ))}

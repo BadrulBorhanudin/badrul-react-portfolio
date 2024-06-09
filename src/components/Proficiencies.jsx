@@ -2,38 +2,36 @@ import {
   Box,
   Heading,
   VStack,
-  Text,
   SimpleGrid,
   useColorModeValue,
+  Image,
 } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHtml5,
-  faCss3Alt,
-  faJsSquare,
-  faReact,
-  faNodeJs,
-  faGitAlt,
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons';
-import { SiExpress, SiMongodb, SiMysql } from 'react-icons/si';
+import htmlIcon from '../assets/icons/html.png';
+import cssIcon from '../assets/icons/css.png';
+import jsIcon from '../assets/icons/javascript.png';
+import reactIcon from '../assets/icons/react.png';
+import nodeIcon from '../assets/icons/node.png';
+import expressIcon from '../assets/icons/express.png';
+import mongodbIcon from '../assets/icons/mongodb.png';
+import mysqlIcon from '../assets/icons/mysql.png';
+import gitIcon from '../assets/icons/git.png';
+import githubIcon from '../assets/icons/github.png';
 
 function Proficiencies() {
   const icons = [
-    { icon: faHtml5, label: 'HTML' },
-    { icon: faCss3Alt, label: 'CSS' },
-    { icon: faJsSquare, label: 'JavaScript' },
-    { icon: faReact, label: 'React' },
-    { icon: faNodeJs, label: 'Node.js' },
-    { icon: SiExpress, label: 'Express' },
-    { icon: SiMongodb, label: 'MongoDB' },
-    { icon: SiMysql, label: 'MySQL' },
-    { icon: faGitAlt, label: 'Git' },
-    { icon: faGithub, label: 'GitHub' },
+    htmlIcon,
+    cssIcon,
+    jsIcon,
+    reactIcon,
+    nodeIcon,
+    expressIcon,
+    mongodbIcon,
+    mysqlIcon,
+    gitIcon,
+    githubIcon,
   ];
 
   const headingColor = useColorModeValue('brand.700', 'brand.50');
-  const textColor = useColorModeValue('brand.900', 'brand.50');
 
   return (
     <VStack spacing={4} mt={8} mb={0} align='center' w='full'>
@@ -43,18 +41,16 @@ function Proficiencies() {
         </Heading>
         <SimpleGrid
           columns={{ base: 5, md: 10 }}
-          spacing={14}
+          spacing={5}
           textAlign='center'
         >
-          {icons.map(({ icon: Icon, label }) => (
-            <VStack key={label}>
-              {typeof Icon === 'function' ? (
-                <Icon size='2em' />
-              ) : (
-                <FontAwesomeIcon icon={Icon} size='2x' />
-              )}
-              <Text color={textColor}>{label}</Text>
-            </VStack>
+          {icons.map((icon, index) => (
+            <Image
+              key={index}
+              src={icon}
+              boxSize={{ base: '2.5em',  md: '3.5em' }}
+              objectFit='contain'
+            />
           ))}
         </SimpleGrid>
       </Box>
