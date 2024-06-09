@@ -5,7 +5,6 @@ const Layout = ({ children }) => {
   return (
     <Box
       width={{ base: '100%', md: '1000px' }}
-      // minHeight='100vh'
       mx='auto'
       display='flex'
       flexDirection='column'

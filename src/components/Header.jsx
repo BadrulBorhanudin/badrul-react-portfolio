@@ -36,8 +36,13 @@ function Header() {
         justifyContent='space-between'
       >
         <a href='/'>
-          <Heading as='h1' size={{ base: 'md', md: 'lg' }} flexShrink={0}>
-            Badrul Borhanudin
+          <Heading
+            as='h1'
+            size={{ base: 'md', md: 'lg' }}
+            flexShrink={0}
+            fontStyle='italic'
+          >
+            {'<BB />'}
           </Heading>
         </a>
         <HStack

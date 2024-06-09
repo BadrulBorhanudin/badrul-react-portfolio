@@ -23,8 +23,8 @@ function Proficiencies() {
     cssIcon,
     jsIcon,
     reactIcon,
-    nodeIcon,
     expressIcon,
+    nodeIcon,
     mongodbIcon,
     mysqlIcon,
     gitIcon,
@@ -48,7 +48,7 @@ function Proficiencies() {
             <Image
               key={index}
               src={icon}
-              boxSize={{ base: '2.5em',  md: '3.5em' }}
+              boxSize={{ base: '2.5em', md: '3.5em' }}
               objectFit='contain'
             />
           ))}

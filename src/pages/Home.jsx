@@ -2,9 +2,7 @@ import { Box } from '@chakra-ui/react';
 import AboutMe from '../components/AboutMe';
 import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
-// import Resume from '../components/Resume';
 import Layout from '../components/Layout';
-// import Proficiencies from '../components/Proficiencies';
 
 const Home = () => (
   <Layout>
@@ -17,9 +15,6 @@ const Home = () => (
     <Box id='contact'>
       <Contact />
     </Box>
-    {/* <Box>
-      <Proficiencies />
-    </Box> */}
   </Layout>
 );
 
