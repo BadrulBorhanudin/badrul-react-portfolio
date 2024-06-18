@@ -108,14 +108,14 @@ function AboutMe() {
             </Text>
             <HStack spacing={4} mt={2}>
               <Link
-                href='https://github.com/badrulborhanudin'
+                href='https://github.com/BadrulBorhanudin'
                 isExternal
                 _hover={{ color: hoverColor }}
               >
                 <FontAwesomeIcon icon={faGithub} size='2x' />
               </Link>
               <Link
-                href='https://www.linkedin.com/in/badrul-b-2968402b2'
+                href='https://www.linkedin.com/in/BadrulBorhanudin'
                 isExternal
                 _hover={{ color: hoverColor }}
               >
