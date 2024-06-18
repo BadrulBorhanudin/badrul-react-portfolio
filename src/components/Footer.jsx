@@ -18,7 +18,7 @@ function Footer() {
       >
         <Box as='li'>
           <Link
-            href='https://github.com/badrulborhanudin'
+            href='https://github.com/BadrulBorhanudin'
             target='_blank'
             rel='noopener noreferrer'
             _hover={{ color: hoverColor }}
@@ -28,7 +28,7 @@ function Footer() {
         </Box>
         <Box as='li'>
           <Link
-            href='https://www.linkedin.com/in/badrul-b-2968402b2'
+            href='https://www.linkedin.com/in/BadrulBorhanudin'
             target='_blank'
             rel='noopener noreferrer'
             _hover={{ color: hoverColor }}
