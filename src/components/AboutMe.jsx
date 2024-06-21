@@ -138,18 +138,14 @@ function AboutMe() {
         <Divider borderColor='gray.500' />
         <Box w='100%'>
           <Text fontSize='md' textAlign='justify'>
-            I have always had a strong passion for IT. Starting as an IT
-            Technician, I worked my way up to become a System Engineer,
-            primarily working within a team in the IT Support Department. While
-            I enjoyed my role, being on-call 24/7 sometimes disrupted my
-            work-life balance.
-          </Text>
-          <Text fontSize='md' textAlign='justify' mt={4}>
-            Now, having graduated from a bootcamp, I am eager to transition into
-            a career in full-stack development. I am excited about this new
-            journey and confident that my training has equipped me with the
-            skills needed to achieve my ultimate goal of becoming a skilled
-            developer.
+            Aspiring full stack web developer leveraging a strong background in
+            IT support to provide unique perspectives on how end-users interact
+            with websites and software platforms. Earned a certificate in Full
+            Stack Web Development from the University of Adelaide Coding Boot
+            Camp. Innovative problem-solver who is passionate about developing
+            apps with a focus on mobile-first design and development. Strengths
+            in creativity, teamwork, and building projects from ideation to
+            execution.
           </Text>
         </Box>
         <Proficiencies />
