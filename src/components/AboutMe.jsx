@@ -70,15 +70,17 @@ function AboutMe() {
           alignItems='center'
         >
           <Image
-            borderRadius='full'
-            boxSize={{ base: '150px', sm: '200px', md: '300px' }}
             src={profilePic}
             alt='Badrul Borhanudin'
+            boxSize={{ base: '150px', sm: '200px', md: '300px' }}
+            borderRadius='full'
+            objectFit='cover'
             border='5px solid'
             borderColor={borderColor}
             boxShadow={boxShadow}
             justifySelf='center'
           />
+
           <VStack spacing={2} alignItems={{ base: 'center', md: 'flex-start' }}>
             <motion.div
               variants={containerVariants}
@@ -138,14 +140,16 @@ function AboutMe() {
         <Divider borderColor='gray.500' />
         <Box w='100%'>
           <Text fontSize='md' textAlign='justify'>
-            Aspiring full stack web developer leveraging a strong background in
-            IT support to provide unique perspectives on how end-users interact
-            with websites and software platforms. Earned a certificate in Full
-            Stack Web Development from the University of Adelaide Coding Boot
-            Camp. Innovative problem-solver who is passionate about developing
-            apps with a focus on mobile-first design and development. Strengths
-            in creativity, teamwork, and building projects from ideation to
-            execution.
+            Full stack web developer with a strong foundation in IT support, now
+            working professionally in full stack development. Brings a
+            user-focused perspective to building intuitive, responsive, and
+            maintainable applications with an emphasis on usability and
+            performance. Certified in Full Stack Web Development from the
+            University of Adelaide Coding Boot Camp. Skilled in both front-end
+            and back-end development, with a practical approach to solving
+            real-world problems and delivering stable, production-ready
+            solutions. Focused on collaboration and following projects through
+            from concept to deployment.
           </Text>
         </Box>
         <Proficiencies />
